@@ -1,0 +1,22 @@
+spring:  
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://localhost:8080/auth/realms/keycloak-oauth2/protocol/openid-connect/certs
+      client:
+        registration:
+          keycloak:
+            client-id: 'resource-server'
+            client-secret: 'ba6cb1f2-f223-430e-95cb-075288a120d7'
+            authorizationGrantType: authorization_code
+            redirect-uri: '{baseUrl}/login/oauth2/code/{registrationId}'
+            scope: 
+              - email  
+              - profile
+              - openid
+#              - offline_access
+        provider:
+          keycloak:
+            issuerUri: http://localhost:8080/auth/realms/keycloak-oauth2
+            user-name-attribute: name
