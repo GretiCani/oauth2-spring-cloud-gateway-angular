@@ -58,6 +58,8 @@ public class SecurityConfig {
 	        .permitAll()
 	        .matchers(EndpointRequest.to("info"))
 	        .permitAll()
+			.pathMatchers("/**")
+			.permitAll()
 			.anyExchange().authenticated()
 			.and()
             .oauth2Client()

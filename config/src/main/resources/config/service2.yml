@@ -3,12 +3,12 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          jwk-set-uri: http://localhost:8080/auth/realms/keycloak-oauth2/protocol/openid-connect/certs
+          jwk-set-uri: http://localhost:8080/auth/realms/dev/protocol/openid-connect/certs
       client:
         registration:
           keycloak:
             client-id: 'resource-server'
-            client-secret: 'ba6cb1f2-f223-430e-95cb-075288a120d7'
+            client-secret: 'acfd9f4b-3c15-49ab-b988-1353c5679ffe'
             authorizationGrantType: authorization_code
             redirect-uri: '{baseUrl}/login/oauth2/code/{registrationId}'
             scope: 
@@ -18,5 +18,5 @@ spring:
 #              - offline_access
         provider:
           keycloak:
-            issuerUri: http://localhost:8080/auth/realms/keycloak-oauth2
+            issuerUri: http://localhost:8080/auth/realms/dev
             user-name-attribute: name
